@@ -1,0 +1,94 @@
+body {
+    background-color: #343a40;
+    display: block;
+    align-content: center;
+    padding-bottom: 2em;
+    /* padding: 3em; */
+}
+
+#header {
+    color:white;
+    margin-bottom: 40px;
+}
+
+.user-info {
+    color: whitesmoke;
+    margin: auto;
+    width: 50%;
+    margin-bottom: 3em;
+    /* height: 50%; */
+}
+
+.login-form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 28em;
+}
+
+.input-label {
+    float: left;
+}
+
+.login-signup-btn {
+    margin-top: 1em;
+    margin-bottom: 0.7em;
+}
+
+.table {
+    width: 500px;
+    display: none;
+    margin: auto;
+}
+
+#stat-table-body {
+    background-color: aliceblue;
+
+}
+
+#error-snackbar {
+    visibility: hidden; 
+    min-width: 500px; 
+    margin-left: -250px; 
+    background-color: #333; 
+    color: #fff;
+    text-align: center; 
+    border-radius: 2px;
+    padding: 16px; 
+    position: fixed; 
+    z-index: 1; 
+    left: 50%; 
+    bottom: 30px; 
+  }
+  
+  #error-snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 3.5s;
+    animation: fadein 0.5s, fadeout 0.5s 3.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+
+  @media only screen and (max-width: 768px) {
+    .user-info {
+      width: 70%;
+    }
+  }

@@ -1,0 +1,91 @@
+#page-body {
+    height: 100%;
+    width: 100%;
+}
+#page-content {
+    height: inherit;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#list-title-container {
+    display: flex;
+}
+
+.caret-symbol {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
+.back-btn {
+    margin: 32px 20px 0 -65px;
+    border: none;
+    display: inline;
+    height: fit-content;
+}
+
+.back-btn:hover {
+    background: linear-gradient(rgba(99, 99, 99, 0.75), rgba(99, 99, 99, 0.75));
+}
+
+#list-title {
+    color: whitesmoke;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    /* font-family: cursive; */
+    display: inline;
+    margin-bottom: 20px;
+    height: 1.5em;
+}
+
+
+
+#list-container {
+    border: 2px solid rgba(99, 99, 99, 0.75);
+    border-radius: 20px;
+    min-height: 300px;
+    padding: 1.25rem 1rem 0 1rem;
+    margin-bottom: 20px;
+}
+
+
+/* .list-item {
+    border: 1px solid white;
+    border-radius: 5px;
+} */
+
+.list-item-btn {
+    border: 1px solid #E9ECEF;
+}
+
+#add-list-item-btn {
+    float: right;
+}
+
+#list-item-template {
+    display: none;
+}
+
+#save-icon {
+    font-size: 1.2em;
+    margin-bottom: 0.15em;
+}
+
+@media only screen and (max-width: 768px) {
+    #page-content {
+        width: 90%;
+    }
+    .back-btn, .update-btn{
+        display: none;
+    }
+
+    #list-title {
+        font-size: 1.8em;
+        margin-left: 0.5em;
+
+    }
+
+}

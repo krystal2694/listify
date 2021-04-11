@@ -1,0 +1,125 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/home.css">
+
+    <script src="js/utils.js"></script>
+    <script src="js/home.js"></script>
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <a class="navbar-brand" href="home.html">
+            <h3 id="banner-title" class="display-3"> Listify </h3>
+            <img id="banner-logo" src="images/list.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto align-items-end">
+            <a class="nav-item nav-link active" href="home.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="./API/V1/doc/apiDocumentation.html">API Docs</a>
+            <a class="nav-item nav-link" href="userPreferences.html">Settings</a>
+            <a id="nav-log-out"  class="nav-item nav-link" href="index.html">Log Out</a>
+            </div>
+        </div>
+        </nav>
+
+    <div id="page-body">
+        <div id="header">
+            <h4 id="welcome-user" class=""></h4>
+
+            <button type="button" id="new-list-btn" class="btn btn-primary" data-toggle="modal"
+                data-target="#new-list-modal">
+                <svg id="new-list-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="whitesmoke"
+                    class="bi bi-plus-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                </svg>
+                New List
+            </button>
+
+        </div>
+        <hr id="hr">
+
+        <div id="no-lists-message">You have no lists!</div>
+
+        <div id="list-container">
+            <div id="list-template">
+                <div class="card text-white bg-info mb-3">
+                    <div class="card-header"></div>
+                    <div class="card-body">
+                        <h3 class="list-title"></h3>
+                        <button name='delete-btn' class="btn btn-lg delete-btn bg-transparent">
+                            <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#E9ECEF" class="bi bi-trash" viewBox="0 0 16 16">
+                                <path name='delete-btn' d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                <path name='delete-btn' fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-container">
+
+        <!-- The Modal -->
+        <div class="modal fade" id="new-list-modal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add New List</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <input type="text" class="form-control" id="list-name-input" placeholder="" autofocus>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" id="add-btn" class="btn btn-success" data-dismiss="modal">Add</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="updated-snackbar" class="snackbar">
+        <p class='snackbar-message'></p>
+    </div>
+    <div id="error-snackbar" class="snackbar">
+        <svg id="error-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+          </svg>
+        <p class='snackbar-message'></p>
+    </div>
+
+</body>
+
+
+</html>

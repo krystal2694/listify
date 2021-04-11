@@ -1,0 +1,107 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/index.css">
+
+
+  <script src="js/utils.js"></script>
+  <script src="js/signUp.js"></script>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-sm navbar-dark">
+    <a class="navbar-brand">
+      <h3 id="banner-title" class="display-3"> Listify </h3>
+      <img id="banner-logo" src="images/list.png">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto align-items-end">
+        <a class="nav-item nav-link" href="./API/V1/doc/apiDocumentation.html">API Docs</a>
+        <a class="nav-item nav-link" href="index.html">Log In</a>
+      </div>
+    </div>
+  </nav>
+
+  <div id="page-body">
+    <div id="page-content">
+      <div id="header">
+        <div id="description-container">
+          <div class="jumbotron bg-dark text-white">
+            <p class="lead"> Your life, in lists.</p>
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="user-info">
+        <form class="login-form" onsubmit="return false">
+          <div class="form-group">
+            <label class='input-label' for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter name" required>
+          </div>
+          <div class="form-group">
+            <label class='input-label' for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+          </div>
+          <div class="form-group">
+            <label class='input-label' for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+          </div>
+
+          <button id='signup-btn' class="btn btn-info btn-lg nav-button login-signup-btn">Sign Up</button>
+        </form>
+
+        <div>Already have an account?<br/><a href="index.html" class="account-link">Log In!</a></div>
+      </div>
+    </div>
+
+    <div id="admin-btn-container">
+      <a href="./API/V1/admin.html">
+        <button id='admin-btn' type="button" class="btn btn-secondary">Admin
+          <svg id="admin-caret" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+            <path
+              d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+          </svg>
+        </button>
+      </a>
+    </div>
+
+  </div>
+
+
+
+  <div id="error-snackbar" class="snackbar">
+    <svg id="error-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
+      class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+      <path
+        d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+    </svg>
+    <p class='snackbar-message'></p>
+  </div>
+
+
+
+</body>
+
+</html>

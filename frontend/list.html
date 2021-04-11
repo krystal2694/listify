@@ -1,0 +1,96 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My List</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/list.css">
+    <script src="js/utils.js"></script>
+    <script src="js/list.js"></script>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <a class="navbar-brand" href="home.html">
+            <h3 id="banner-title" class="display-3"> Listify </h3>
+            <img id="banner-logo" src="images/list.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto align-items-end">
+            <a class="nav-item nav-link" href="home.html">Home</a>
+            <a class="nav-item nav-link" href="./API/V1/doc/apiDocumentation.html">API Docs</a>
+            <a class="nav-item nav-link" href="userPreferences.html">Settings</a>
+            <a id="nav-log-out" class="nav-item nav-link" href="index.html">Log Out</a>
+          </div>
+        </div>
+      </nav>
+
+    <div id="page-body">
+        <div id="page-content">
+            <div id='list-title-container'>
+                <a href="./home.html" class="btn back-btn bg-transparent" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-caret-left-fill caret-symbol" viewBox="0 0 16 16">
+                    <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                  </svg>
+                </a>
+                <input type="text" id='list-title' class="display-4">
+            </div>
+            <div id="list-container">
+
+                <div id='list-item-template' class="input-group mb-3">
+                    <div class="input-group-prepend list-item">
+                        <div class="input-group-text">
+                            <input type="checkbox" class='checkbox' aria-label="Checkbox for following text input" disabled>
+                        </div>
+                    </div>
+                    <input type="text" class="form-control strike-through" aria-label="Text input with checkbox">
+                    <div class="input-group-append" id="button-addon4">
+                        <button class="btn btn-primary list-item-btn update-btn" type="button" disabled>
+                              <div id="save-icon">&#128427;</div>
+                        </button>
+                        <button class="btn btn-danger list-item-btn delete-btn" type="button" disabled>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#E9ECEF"
+                                class="bi bi-trash" viewBox="0 0 16 16">
+                                <path
+                                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                <path fill-rule="evenodd"
+                                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <button id="add-list-item-btn" class="btn btn-success" type="button">Add</button>
+
+
+            <div id="updated-snackbar" class="snackbar">
+                <p class='snackbar-message'></p>
+            </div>
+            <div id="error-snackbar" class="snackbar">
+                <svg id="error-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                  </svg>
+                <p class='snackbar-message'></p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

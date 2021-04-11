@@ -1,0 +1,48 @@
+#settings-title {
+    color: whitesmoke;
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#hr {
+    line-height: 0.5px;
+    max-width: 70%;
+}
+
+#header, #settings-container{
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#save-btn {
+    height: fit-content;
+    margin-top: 0.8em;
+}
+
+label {
+    color: white;
+    /* font-size: 2rem; */
+    /* font-weight: 300; */
+    /* line-height: 1.2; */
+}
+
+.form-group {
+    margin-top: 2em;
+}
+
+@media only screen and (max-width: 768px) {
+    /* #settings-container > .row {
+        display: flex;
+    } */
+
+    .col-form-label-lg {
+       float: left;
+    }
+}

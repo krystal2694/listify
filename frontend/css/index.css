@@ -1,0 +1,36 @@
+#page-body {
+  text-align: center;
+  height: 100%;
+}
+
+#page-content {
+  margin-top: 3em;
+}
+
+.user-info {
+    color: whitesmoke;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+}
+
+.login-form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 28em;
+}
+
+.input-label {
+    float: left;
+}
+
+.login-signup-btn {
+    margin-top: 1em;
+    margin-bottom: 0.7em;
+}
+
+@media only screen and (max-width: 768px) {
+  .user-info {
+    width: 70%;
+  }
+}
