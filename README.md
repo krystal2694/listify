@@ -1,4 +1,4 @@
-# listify
+# Listify
 Listify is a web application which allows you to create and manage all your lists in a single place.
 
 It allows you to create grocery lists, To-Do lists, packing lists, or any other type of list you can think of.
